@@ -1,0 +1,51 @@
+import React, { Component } from 'react'
+import { Collapse, Button, CardBody, Card } from 'reactstrap';
+
+export default class UserAds extends Component {
+    constructor(props) {
+        super(props);
+        this.toggle = this.toggle.bind(this);
+        this.state = { collapse: false };
+    }
+
+    toggle() {
+        this.setState({ collapse: !this.state.collapse });
+    }
+    render() {
+        return (
+            <div>
+                <Button>modifier</Button>
+                <Button>supprimer</Button>
+                <img src="data:image/jpeg;base64,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" />
+                <h1 className="title">Garder mon enfant svoupléééé</h1>
+                <p className="description">Mon enfant est hyper chiant, je le déteste, c'était une errerur , ce jour la j'ai trop bu est je ne me souvient même pas de son père, anyways j'ai besoin qu'on me la garde (à jamais je veux bien mais bon ...) venez le garder sveuplé ça fait longtemps que je n'ai pas couché avec quelqu'un</p>
+                <h2 className="remuneration"> 0.15dt par heure w barcha fih</h2>
+                <h2 className="date">30/02/2019</h2>
+                <div>
+                    <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Personne interéssées</Button>
+
+                    <Collapse isOpen={this.state.collapse}>
+                        <Card>
+                            <CardBody>
+                                <div>
+                                    <h1>personne1</h1>
+                                    <Button>je le veux</Button>
+                                </div>
+                                <div>
+                                    <h1>personne2</h1>
+                                    <Button>je le veux</Button>
+                                </div>
+                                <div>
+                                    <h1>personne3</h1>
+                                    <Button>je le veux</Button>
+                                </div>
+
+
+                            </CardBody>
+                        </Card>
+                    </Collapse>
+                </div>
+            </div>
+        )
+    }
+}
